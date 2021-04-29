@@ -1,0 +1,102 @@
+
+
+
+    {% block titre %}
+
+        <section id="appointment" class="appointment section-bg">
+            <div class="container" data-aos="fade-up">
+
+            </div>
+        </section>
+    {% endblock %}
+    {% block body %}
+        <body>
+<table>
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                {{ form_start(form,{
+                    'attr': {
+                        'novalidate': 'novalidate',
+
+                    }
+                }
+                ) }}
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group col-md-12">
+                            <label class="col-sm-3 form-control-label">Nom</label>
+                            {{ form_widget(form.nom, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+
+                    </div>
+                </div>
+            <div class="row">
+                <div class="form-group col-md-6">
+                    <label class="col-sm-3 form-control-label">lieu</label>
+                    {{ form_widget(form.lieu, { 'attr': {'class': 'form-control'} }) }}
+                    {{ form_errors(form.lieu) }}
+                </div>
+                <div class="form-group col-md-6">
+                    <label class="col-sm-3 form-control-label">Heure</label>
+                     <div class="col-10">
+                            <input class="form-control" type="time" name="timeEvent" value="12:00:00" id="example-time-input">
+                        </div>
+                    </div>
+                    {#                    {{ form_errors(form.heure) }}#}
+                </div>
+            </div>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label class="col-sm-3 form-control-label">nbpart</label>
+                        {{ form_widget(form.nbpart, { 'attr': {'class': 'form-control'} }) }}
+                        {{ form_errors(form.nbpart) }}
+                    </div>
+{#                    <div class="form-group col-md-6">#}
+{#                        <label class="col-sm-3 form-control-label">Date</label>#}
+{#                        {{ form_widget(form.date) }}#}
+{#                        {{ form_errors(form.date) }}#}
+{#                    </div>#}
+                    <div class="form-group col-md-6">
+                        <label for="example-date-input" class="col-2 col-form-label">Date</label>
+                        <div class="col-10">
+                            <input class="form-control" type="date" name="dateEvent" value="{{ "now"|date("Y-m-d") }}" id="example-date-input">
+                        </div>
+                </div>
+                </div>
+            <div class="row">
+
+
+            </div>
+
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label for="example-date-input" class="col-2 col-form-label">Image</label>
+                        <div class="col-10">
+                            {{ form_widget(form.image, { 'attr': {'class': 'form-control'} }) }}
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+            <div class="form-group text-center">
+                    <button class="btn">{{ button_label|default('Save') }}</button>
+                </div>
+
+                {{ form_end(form) }}
+
+            </div>
+        </div>
+</table>
+        </body>
+    {% endblock %}
+

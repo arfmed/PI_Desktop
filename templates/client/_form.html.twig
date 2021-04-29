@@ -1,0 +1,65 @@
+{% block titre %}
+
+        <section id="appointment" class="appointment section-bg">
+            <div class="container" data-aos="fade-up">
+
+            </div>
+        </section>
+    {% endblock %}
+    {% block body %}
+    <body>
+<table>
+            <div id="content-wrapper" class="d-flex flex-column">
+
+                <!-- Main Content -->
+                <div id="content">
+
+            {{ form_start(form,{
+                'attr': {
+                    'novalidate': 'novalidate',
+
+                }
+            }
+            ) }}
+
+<div>
+            <div class="form-group">
+                <label class="col-sm-3 form-control-label">Nom</label>
+                {{ form_widget(form.nom) }}
+                {{ form_errors(form.nom) }}
+            </div>
+
+                    <div class="form-group">
+                <label class="col-sm-3 form-control-label">Prenom</label>
+
+                {{ form_widget(form.prenom) }}
+                {{ form_errors(form.prenom) }}
+            </div>
+            <div class="form-group">
+                <label class="col-sm-3 form-control-label">E_mail</label>
+                {{ form_widget(form.mail) }}
+                {{ form_errors(form.mail) }}
+            </div>
+
+                    <div class="form-group">
+                        <label class="col-sm-3 form-control-label">Reservation</label>
+                        {{ form_widget(form.reservetion) }}
+                        {{ form_errors(form.reservetion) }}
+                    </div>
+
+
+                </div>
+
+                    <div class="form-group">
+                        <button class="btn">{{ button_label|default('Save') }}</button>
+                    </div>
+
+            {{ form_end(form) }}
+
+
+        </div>
+    </div>
+</table>
+    </body>
+{% endblock %}
+

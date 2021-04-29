@@ -1,0 +1,195 @@
+<!--A Design by W3layouts
+Author: W3layout
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Gym_v2 a Sports Category Flat Bootstrap Responsive Website Template | Blog :: w3layouts</title>
+    <link href="{{ asset('front/css/bootstrap.css') }}" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('front/css/style.css') }}" rel='stylesheet' type='text/css' />
+    <link href="{{ asset('front/css/toastr.min.css') }}" rel='stylesheet' type='text/css' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="keywords" content="Gym_v2 Responsive web template, Bootstrap Web Templates, Flat Web Templates, Andriod Compatible web template,
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700' rel='stylesheet' type='text/css'>
+    <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+    <script src="{{ asset('front/js/jquery.min.js') }}"></script>
+    <!-- grid-slider -->
+    <script type="text/javascript" src="{{ asset('front/js/jquery.mousewheel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('front/js/jquery.contentcarousel.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('front/js/toastr.min.js') }}"></script>
+    <!-- //grid-slider -->
+</head>
+<body>
+<!-- start header_bottom -->
+<div class="header-bottom">
+    <div class="container">
+        <div class="header-bottom_left">
+            <i class="phone"> </i><span>1-200-346-2986</span>
+        </div>
+        <div class="social">
+            <ul>
+                <li class="facebook"><a href="#"><span> </span></a></li>
+                <li class="twitter"><a href="#"><span> </span></a></li>
+                <li class="pinterest"><a href="#"><span> </span></a></li>
+                <li class="google"><a href="#"><span> </span></a></li>
+                <li class="tumblr"><a href="#"><span> </span></a></li>
+                <li class="instagram"><a href="#"><span> </span></a></li>
+                <li class="rss"><a href="#"><span> </span></a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- start menu -->
+<div class="menu">
+    <div class="container">
+        <div class="logo">
+            <a href="index.html"><img src="images/logo.png" alt=""/></a>
+        </div>
+        <div class="h_menu4"><!-- start h_menu4 -->
+            <a class="toggleMenu" href="#">Menu</a>
+            <ul class="nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="trainers.html">Trainers</a></li>
+                <li><a href="classes.html">Classes</a></li>
+                <li class="active"><a href="blog.html">Blog</a></li>
+                <li><a href="pricing.html">Pricing</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <script type="text/javascript" src="js/nav.js"></script>
+        </div><!-- end h_menu4 -->
+        <div class="clear"></div>
+    </div>
+</div>
+<!-- end menu -->
+<div class="main">
+    <div class="about_banner_img"><img src="images/blog_img1.jpg" class="img-responsive" alt=""/></div>
+    <div class="about_banner_wrap">
+        <h1 class="m_11">Blog</h1>
+    </div>
+    <div class="border"> </div>
+    <div class="container">
+        <div class="row single-top">
+            <div class="col-md-12">
+                <a class="btn-sm btn-primary text-center" href="{{ path('event_plus_reserver_front') }}">Evenement plus reservé</a>
+
+                {% for evenement in evenements %}
+                    {% for message in app.flashes('success') %}
+                        <div class="alert alert-success">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                    {% for message in app.flashes('error') %}
+                        <div class="alert alert-danger">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                <div class="blog_box">
+                    <div class="blog_grid">
+                        <h3><a href="blog_single.html">{{ evenement.nom }} </a></h3><i class="document"> </i>
+                        <a href="blog_single.html"><img src="{{ asset('uploads/evenement/'~evenement.image) }}" class="img-responsive" alt=""/></a>
+                        <div class="singe_desc">
+                            <p></p>
+                            <div class="comments">
+                                <ul class="links">
+                                    <li><a href="#"><i class="blog_icon1"> </i><br><span>{{ evenement.date|date('Y-m-d') }}</span></a></li>
+                                    <li><a href="#"><i class="blog_icon4" style="color: blue"> </i><br><span>{{ evenement.lieu }}</span></a></li>
+                                </ul>
+                                <div class="btn_blog"><pre><a href="{{ path('event_reserver',{id: evenement.id}) }}">Reserver</a></pre>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+
+                {#<ul class="dc_pagination dc_paginationA dc_paginationA06">#}
+                    {#<li><a href="#" class="current">Prev</a></li>#}
+                    {#<li><a href="#">1</a></li>#}
+                    {#<li><a href="#">2</a></li>#}
+                    {#<li><a href="#">3</a></li>#}
+                    {#<li><a href="#">4</a></li>#}
+                    {#<li><a href="#">5</a></li>#}
+                    {#<li><a href="#">...</a></li>#}
+                    {#<li><a href="#">19</a></li>#}
+                    {#<li><a href="#">20</a></li>#}
+                    {#<li><a href="#" class="current">Next</a></li>#}
+                {#</ul>#}
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="footer-bottom">
+    <div class="container">
+        <div class="row section group">
+            <div class="col-md-4">
+                <h4 class="m_7">Newsletter Signup</h4>
+                <p class="m_8">Lorem ipsum dolor sit amet, consectetuer adipiscing elit sed diam nonummy.</p>
+                <form class="subscribe">
+                    <input type="text" value="Insert Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Insert Email';}">
+                </form>
+                <div class="subscribe1">
+                    <a href="#">Submit Email<i class="but_arrow"> </i></a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="f-logo">
+                    <img src="images/logo.png" alt=""/>
+                </div>
+                <p class="m_9">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis</p>
+                <p class="address">Phone : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10">(00) 222 666 444</span></p>
+                <p class="address">Email : &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="m_10"><a href="mailto:example@mail.com">mail@example.com</a></span></p>
+            </div>
+            <div class="col-md-4">
+                <ul class="list">
+                    <h4 class="m_7">Menu</h4>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="trainers.html">Trainers</a></li>
+                    <li><a href="classes.html">Classes</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="#">Privacy</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <ul class="list1">
+                    <h4 class="m_7">Community</h4>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="#">Forum</a></li>
+                    <li><a href="#">Support</a></li>
+                    <li><a href="#">Newsletter</a></li>
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+    <div class="container">
+        <div class="copy">
+            <p>Copyright © 2015 Gym-v2. All Rights Reserved | Design by <a href="http://w3layouts.com/" target="_blank">W3layouts</a> </p>
+        </div>
+        <div class="social">
+            <ul>
+                <li class="facebook"><a href="#"><span> </span></a></li>
+                <li class="twitter"><a href="#"><span> </span></a></li>
+                <li class="pinterest"><a href="#"><span> </span></a></li>
+                <li class="google"><a href="#"><span> </span></a></li>
+                <li class="tumblr"><a href="#"><span> </span></a></li>
+                <li class="instagram"><a href="#"><span> </span></a></li>
+                <li class="rss"><a href="#"><span> </span></a></li>
+            </ul>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+</body>
+</html>
